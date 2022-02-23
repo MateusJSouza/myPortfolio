@@ -31,7 +31,7 @@ export const KnowledgeContainer = styled.div`
   justify-content: center;
 
   p {
-    color: ${({ theme }) => theme.primary});
+    color: ${({ theme }) => theme.primary};
     font-weight: 500;
     font-size: 1.3rem;
     text-transform: uppercase;
