@@ -1,4 +1,6 @@
 import Experiences from '../components/Experiences';
+import Footer from '../components/Footer';
+import FormContact from '../components/FormContact';
 import Header from '../components/Header';
 import HomeHero from '../components/HomeHero';
 import Knowledges from '../components/Knowledges';
@@ -15,7 +17,9 @@ export default function Home() {
         <Experiences />
         <Projects />
         <Knowledges />
+        <FormContact />
       </main>
+      <Footer />
     </HomeContainer>
   );
 }
