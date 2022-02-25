@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { NavLinkContainer } from './styles';
@@ -5,11 +6,20 @@ import { NavLinkContainer } from './styles';
 interface Props {
   title: string;
   path: string;
+  includes?: boolean;
 }
 
-export default function NavLink({ title, path }: Props) {
+export default function NavLink({ title, path, includes = false }: Props) {
   const router = useRouter();
-  const isActive = router.pathname === path;
+
+  function verifyIfIsActive() {
+    if (includes) {
+      return router.pathname.includes(path);
+    }
+    return path === router.pathname;
+  }
+
+  const isActive = verifyIfIsActive();
 
   return (
     <NavLinkContainer isActive={isActive}>
