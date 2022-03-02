@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@prismicio/client": "5.1.0",
+    "aos": "^2.3.4",
     "framer-motion": "^6.2.7",
     "next": "10.2.0",
     "next-images": "^1.7.0",
