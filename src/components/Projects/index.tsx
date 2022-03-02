@@ -17,8 +17,6 @@ interface ProjectsProps {
 }
 
 function Projects({ projects }: ProjectsProps) {
-  console.log(projects);
-
   return (
     <Container>
       <SectionTitle title="Últimos projetos" description="" />

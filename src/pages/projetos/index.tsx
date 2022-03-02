@@ -5,7 +5,7 @@ import ShowProjects from '../../components/ShowProjects';
 import { ProjectsContainer } from '../../styles/ProjectsStyles';
 import { getPrismicClient } from '../../services/prismic';
 
-interface IProjects {
+interface IProject {
   slug: string;
   title: string;
   type: string;
@@ -15,7 +15,7 @@ interface IProjects {
 }
 
 interface ProjectProps {
-  projects: IProjects[];
+  projects: IProject[];
 }
 
 export default function Projetos({ projects }: ProjectProps) {
