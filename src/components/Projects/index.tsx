@@ -3,30 +3,37 @@ import SectionTitle from '../SectionTitle';
 import ProjectItem from './ProjectItem';
 import { Container } from './styles';
 
-function Projects() {
+interface IProjects {
+  slug: string;
+  title: string;
+  type: string;
+  description: string;
+  link: string;
+  thumbnail: string;
+}
+
+interface ProjectsProps {
+  projects: IProjects[];
+}
+
+function Projects({ projects }: ProjectsProps) {
+  console.log(projects);
+
   return (
     <Container>
       <SectionTitle title="Últimos projetos" description="" />
 
       <section>
-        <ProjectItem
-          img="https://upload.wikimedia.org/wikipedia/commons/3/35/Santos_logo.svg"
-          title="Projeto 01"
-          type="Website"
-          slug="teste"
-        />
-        <ProjectItem
-          img="https://upload.wikimedia.org/wikipedia/commons/3/35/Santos_logo.svg"
-          title="Projeto 01"
-          type="Website"
-          slug="teste"
-        />
-        <ProjectItem
-          img="https://upload.wikimedia.org/wikipedia/commons/3/35/Santos_logo.svg"
-          title="Projeto 01"
-          type="Website"
-          slug="teste"
-        />
+        {/* Slice (0, 3) -> Pega os três projetos mais recentes do Prismic */}
+        {projects.slice(0, 3).map(project => (
+          <ProjectItem
+            key={project.slug}
+            img={project.thumbnail}
+            title={project.title}
+            type={project.type}
+            slug={project.slug}
+          />
+        ))}
       </section>
       <button type="button">
         <Link href="/projetos">
