@@ -33,10 +33,7 @@ export default function Project({ project }: ProjectProps) {
       <ContainerProject>
         <Head>
           <title>{project.title} | Meu portfólio</title>
-          <meta
-            name="description"
-            content="Estes foram alguns dos projetos que desenvolvi durante meus estudos de programação."
-          />
+          <meta name="description" content={project.description} />
           <meta name="description" content={project.description} />
           <meta property="og:image" content={project.thumbnail} />
           <meta property="og:image:secure_url" content={project.thumbnail} />
@@ -84,7 +81,7 @@ export const getStaticProps: GetStaticProps = async context => {
   const prismic = getPrismicClient();
   const { slug } = context.params;
 
-  const response = await prismic.getByUID('projetos', String(slug), {});
+  const response = await prismic.getByUID('projeto', String(slug), {});
 
   // Formatando os dados utilizando o map para retornar um novo objeto
   const project = {
