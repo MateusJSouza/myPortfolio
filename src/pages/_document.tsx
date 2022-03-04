@@ -41,6 +41,11 @@ export default class MyDocument extends Document {
     return (
       <Html lang="pt-br">
         <Head>
+          <link
+            rel="shortcut icon"
+            href="../public/nextjs.png"
+            type="image/x-icon"
+          />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link

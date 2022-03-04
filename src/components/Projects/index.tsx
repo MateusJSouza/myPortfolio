@@ -19,7 +19,7 @@ interface ProjectsProps {
 function Projects({ projects }: ProjectsProps) {
   return (
     <Container>
-      <SectionTitle title="Últimos projetos" description="" />
+      <SectionTitle title="Últimos projetos" />
 
       <section>
         {/* Slice (0, 3) -> Pega os três projetos mais recentes do Prismic */}
