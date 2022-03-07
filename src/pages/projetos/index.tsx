@@ -3,8 +3,8 @@ import Prismic from '@prismicio/client';
 import Head from 'next/head';
 import Header from '../../components/Header';
 import ShowProjects from '../../components/ShowProjects';
-import { ProjectsContainer } from '../../styles/ProjectsStyles';
 import { getPrismicClient } from '../../services/prismic';
+import { ProjectsContainer } from '../../styles/ProjectsStyles';
 
 interface IProject {
   slug: string;
@@ -64,7 +64,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   // Formatando os dados utilizando o map para retornar um novo objeto
   const projects = projectResponse.results.map(project => ({
-    slug: project.id,
+    slug: project.uid,
     title: project.data.title,
     type: project.data.type,
     description: project.data.description,
