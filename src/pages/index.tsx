@@ -74,7 +74,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   // Formatando os dados utilizando o map para retornar um novo objeto
   const projects = projectResponse.results.map(project => ({
-    slug: project.id,
+    slug: project.uid,
     title: project.data.title,
     type: project.data.type,
     description: project.data.description,
