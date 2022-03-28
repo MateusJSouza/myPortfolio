@@ -8,9 +8,8 @@ export const Container = styled.div<ContainerProps>`
   > a {
     position: relative;
     width: 100%;
-    background: url(${props => props.imgUrl}) no-repeat center;
+    background: #ccc url(${props => props.imgUrl}) no-repeat center;
     background-size: cover;
-    background: #ccc;
     height: 10rem;
     padding: 1.5rem;
     display: flex;
